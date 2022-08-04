@@ -212,11 +212,21 @@ p {
   font-size: 29px;
 }
 
-p .git-code {
-  display: block;
-  margin: 0 auto;
-  font-size: 10px;
-  font-family: monospace;
+.footer {
+  top: 790px;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.git-code {
+  text-align: center;
+  font-size: 14px;
+  font-family: "Red Hat Display", sans-serif;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 5px;
+}
+
+a {
   color: #0d86dd;
-  margin-top: 50px;
 }
