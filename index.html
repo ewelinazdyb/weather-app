@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/c37d9a4f8c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>Weather App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <section class="search">
+        <div class="box search-box">
+          <form id="search-city-form">
+            <input
+              id="search-city-input"
+              class="form-control"
+              type="text"
+              placeholder="Search city"
+            />
+            <button type="submit" class="submit-button" id="submit-button">Go!</button>
+          </form>
+ </div>
+ 
+          <button class="current-button" id="current-button">Current</button>
+
+       
+      </section>
+      <section class="date-time">
+      
+          <h4 class="date-time-text" id="date-time-text">Tuesday 16:30</h4>
+      
+      </section>
+      <div class="box box--gradient weather-forecast">
+        <section class="forecast-text">
+          <h2 class="city-name" id="city-name">PARIS</h2>
+          <h3 class="conditions" id="conditions">cloudy</h3>
+
+          <div class="row todays-forecast">
+          <div class="col">
+              <h4 class="humidity">
+                <i class="fa-solid fa-water humidity-icon"></i> <span id="humidity">40%</span> 
+              </h4>
+            </div>
+
+            <div class="col">
+              <h1 class="todays-temp" id="todays-temp">26°C</h1>
+               <p class="temp-units"><a href="#" id="far-to-cel" class="far-to-cel">°C</a>|<a href="#" id="cel-to-far" class="cel-to-far">°F</a>
+               </p>
+            </div>
+
+            <div class="col">
+              <h4 class="wind-speed">
+               <span id="wind-speed">7m/s</span> <i class="fa-solid fa-wind wind-icon"></i>
+              </h4>
+            </div>
+          </div>
+
+          <div class="row weekly-forecast">
+            <div class="col">
+              <p class="weekday">tues</p>
+              <i class="fa-solid fa-sun sun-icon"></i>
+              <p class="small-temps">26°C</p>
+            </div>
+            <div class="col">
+              <p class="weekday">wed</p>
+              <i class="fa-solid fa-sun sun-icon"></i>
+              <p class="small-temps">27°C</p>
+            </div>
+            <div class="col">
+              <p class="weekday">thurs</p>
+              <i class="fa-solid fa-sun sun-icon"></i>
+              <p class="small-temps">29°C</p>
+            </div>
+            <div class="col">
+              <p class="weekday">fri</p>
+              <i class="fa-solid fa-cloud-bolt lightening-icon"></i></i>
+              <p class="small-temps">31°C</p>
+            </div>
+            <div class="col">
+              <p class="weekday">sat</p>
+              <i class="fa-solid fa-sun sun-icon"></i>
+              <p class="small-temps">32°C</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>
