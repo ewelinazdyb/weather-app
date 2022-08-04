@@ -211,3 +211,12 @@ p {
 .lightening-icon {
   font-size: 29px;
 }
+
+p .git-code {
+  display: block;
+  margin: 0 auto;
+  font-size: 10px;
+  font-family: monospace;
+  color: #0d86dd;
+  margin-top: 50px;
+}
