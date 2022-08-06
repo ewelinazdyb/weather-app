@@ -114,7 +114,8 @@ function showCurrentCityData(response) {
   let cityName = document.querySelector("#city-name");
   cityName.innerHTML = `${currentCityName.toUpperCase().trim()}`;
 
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let cityTemp = document.querySelector("#todays-temp");
   cityTemp.innerHTML = `${temperature}°C`;
 
