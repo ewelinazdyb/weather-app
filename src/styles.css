@@ -135,8 +135,19 @@ p {
   font-weight: 200;
   line-height: 28px;
   letter-spacing: 1px;
-  margin-bottom: 30px;
-  padding: 22px;
+  margin-bottom: 0px;
+  padding-top: 22px;
+  padding-bottom: 0px;
+}
+
+.icon {
+  display: block;
+  margin: 0 auto;
+  padding: 0px;
+  height: 65px;
+  width: 65px;
+  margin-top: 6px;
+  margin-bottom: 0px;
 }
 
 .conditions {
@@ -169,7 +180,7 @@ p {
 
 .temp-units {
   margin-top: -10px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 0px;
 }
 

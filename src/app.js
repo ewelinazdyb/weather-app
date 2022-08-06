@@ -81,6 +81,13 @@ function showCityData(response) {
   let conditions = response.data.weather[0].main;
   let cityConditions = document.querySelector("#conditions");
   cityConditions.innerHTML = `${conditions.toLowerCase()}`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function fetchCityData() {
@@ -120,6 +127,13 @@ function showCurrentCityData(response) {
   let conditions = response.data.weather[0].main;
   let cityConditions = document.querySelector("#conditions");
   cityConditions.innerHTML = `${conditions.toLowerCase()}`;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function showPosition(position) {
