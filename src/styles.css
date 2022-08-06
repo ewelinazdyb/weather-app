@@ -173,6 +173,16 @@ p {
   padding: 0px;
 }
 
+.temp-units .active {
+  color: #144bbd;
+  cursor: default;
+  text-decoration: none;
+}
+
+.temp-units .active:hover {
+  text-decoration: none;
+}
+
 .humidity,
 .wind-speed {
   margin-top: 45px;
