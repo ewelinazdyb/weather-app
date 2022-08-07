@@ -139,7 +139,7 @@ function displayForecast(response) {
         `
        <div class="col">
               <p class="weekday">${formatForecastDay(forecastDay.dt)}</p>
-              <i class="fa-solid fa-sun sun-icon"></i>
+      ${chooseForecastIcon(forecastDay.weather[0].main)}
               <p class="small-temps"><span class="max">${Math.round(
                 forecastDay.temp.max
               )}°</span> <span class="min">${Math.round(
@@ -160,4 +160,22 @@ function getForecast(coordinates) {
   let apiKey = `07c8d029e683ec94d2784e3188d6f11d`;
   let apiUrlForecast = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrlForecast).then(displayForecast);
+}
+
+function chooseForecastIcon(conditions) {
+  if (conditions === `Clouds`) {
+    return `<i class="fa-solid fa-cloud icon"></i>`;
+  } else if (conditions === `Thunderstorm`) {
+    return `<i class="fa-solid fa-cloud-bolt"></i>`;
+  } else if (conditions === `Drizzle`) {
+    return `<i class="fa-solid fa-cloud-rain"></i>`;
+  } else if (conditions === `Rain`) {
+    return `<i class="fa-solid fa-cloud-showers-heavy"></i>`;
+  } else if (conditions === `Snow`) {
+    return `<i class="fa-solid fa-snowflake"></i>`;
+  } else if (conditions === `Clear`) {
+    return `<i class="fa-solid fa-sun"></i>`;
+  } else if (conditions === "13d") {
+    return `<i class="fa-solid fa-smog"></i>`;
+  }
 }
