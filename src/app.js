@@ -42,7 +42,7 @@ function showSearchCityData(response) {
   celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
   let cityTemp = document.querySelector("#todays-temp");
-  cityTemp.innerHTML = `${temperature}°C`;
+  cityTemp.innerHTML = `${temperature}`;
 
   let humidity = Math.round(response.data.main.humidity);
   let cityHumidity = document.querySelector("#humidity");
@@ -55,13 +55,6 @@ function showSearchCityData(response) {
   let conditions = response.data.weather[0].main;
   let cityConditions = document.querySelector("#conditions");
   cityConditions.innerHTML = `${conditions.toLowerCase()}`;
-
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
 }
@@ -91,7 +84,7 @@ function showCurrentCityData(response) {
   celsiusTemperature = response.data.main.temp;
   let temperature = Math.round(celsiusTemperature);
   let cityTemp = document.querySelector("#todays-temp");
-  cityTemp.innerHTML = `${temperature}°C`;
+  cityTemp.innerHTML = `${temperature}`;
 
   let humidity = Math.round(response.data.main.humidity);
   let cityHumidity = document.querySelector("#humidity");
@@ -104,13 +97,6 @@ function showCurrentCityData(response) {
   let conditions = response.data.weather[0].main;
   let cityConditions = document.querySelector("#conditions");
   cityConditions.innerHTML = `${conditions.toLowerCase()}`;
-
-  let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
-  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
 }

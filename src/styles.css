@@ -135,19 +135,8 @@ p {
   font-weight: 200;
   line-height: 28px;
   letter-spacing: 1px;
-  margin-bottom: 0px;
-  padding-top: 22px;
-  padding-bottom: 0px;
-}
-
-.icon {
-  display: block;
-  margin: 0 auto;
-  padding: 0px;
-  height: 65px;
-  width: 65px;
-  margin-top: 6px;
-  margin-bottom: 0px;
+  margin-bottom: 38px;
+  padding: 22px;
 }
 
 .conditions {
@@ -159,6 +148,13 @@ p {
 .todays-temp {
   font-size: 105px;
   margin-bottom: 0px;
+  font-weight: 300;
+}
+
+.units {
+  position: relative;
+  top: -60px;
+  font-size: 18px;
   font-weight: 300;
 }
 
@@ -177,6 +173,10 @@ p {
 .todays-forecast,
 .weekly-forecast {
   text-align: center;
+}
+
+.todays-forecast {
+  margin-bottom: 28px;
 }
 
 .weekly-forecast {
