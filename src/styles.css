@@ -162,38 +162,6 @@ p {
   font-weight: 300;
 }
 
-.cel-to-far {
-  display: inline;
-  margin: 0 auto;
-  font-size: 13px;
-  font-style: italic;
-  color: #edf344;
-}
-
-.far-to-cel {
-  display: inline;
-  margin: 0 auto;
-  font-size: 13px;
-  font-style: italic;
-  color: #edf344;
-}
-
-.temp-units {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  padding: 0px;
-}
-
-.temp-units .active {
-  color: #144bbd;
-  cursor: default;
-  text-decoration: none;
-}
-
-.temp-units .active:hover {
-  text-decoration: none;
-}
-
 .humidity,
 .wind-speed {
   margin-top: 45px;
