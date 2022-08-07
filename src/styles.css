@@ -233,6 +233,14 @@ p {
   font-size: 29px;
 }
 
+.small-temps {
+  font-size: 14px;
+}
+
+.min {
+  opacity: 0.8;
+}
+
 .footer {
   top: 790px;
   position: fixed;

@@ -155,3 +155,27 @@ function currentButtonClick(event) {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentButtonClick);
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#weekly-forecast");
+
+  let days = ["Sun", "Mon", "Tues", "Thurs", "Fri"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+       <div class="col">
+              <p class="weekday">${day.toLowerCase()}</p>
+              <i class="fa-solid fa-sun sun-icon"></i>
+              <p class="small-temps"><span class="max">26°</span> <span class="min">18°</span></p>
+            </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
