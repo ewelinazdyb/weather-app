@@ -159,21 +159,35 @@ function currentButtonClick(event) {
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentButtonClick);
 
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return weekdays[date.getDay()];
+}
+
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#weekly-forecast");
   let days = ["Sun", "Mon", "Tues", "Thurs", "Fri"];
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
        <div class="col">
-              <p class="weekday">${day.toLowerCase()}</p>
+              <p class="weekday">${formatForecastDay(forecastDay.dt)}</p>
               <i class="fa-solid fa-sun sun-icon"></i>
-              <p class="small-temps"><span class="max">26°</span> <span class="min">18°</span></p>
+              <p class="small-temps"><span class="max">${Math.round(
+                forecastDay.temp.max
+              )}°</span> <span class="min">${Math.round(
+          forecastDay.temp.min
+        )}°</span></p>
             </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -184,6 +198,6 @@ function getForecast(coordinates) {
   let lat = coordinates.lat;
   let lon = coordinates.lon;
   let apiKey = `07c8d029e683ec94d2784e3188d6f11d`;
-  let apiUrlForecast = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}`;
+  let apiUrlForecast = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(apiUrlForecast).then(displayForecast);
 }
