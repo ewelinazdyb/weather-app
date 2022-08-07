@@ -26,7 +26,7 @@ body {
   color: #edf344;
   font-size: 27px;
   font-weight: 200;
-  padding: 13px 20px;
+  padding: 14px 24px;
   border: 1px solid #0d86dd;
   background-color: #0d86dd;
   border-radius: 40px;
@@ -135,32 +135,40 @@ p {
   font-weight: 200;
   line-height: 28px;
   letter-spacing: 1px;
-  margin-bottom: 38px;
+  margin-bottom: 48px;
   padding: 22px;
 }
 
 .conditions {
+  font-size: 26px;
   font-style: italic;
   font-weight: 100;
-  margin-bottom: -12px;
+  margin-bottom: -10px;
+}
+
+.todays-icon {
+  position: relative;
+  top: -12px;
+  margin-right: 5px;
+  font-size: 62px;
 }
 
 .todays-temp {
-  font-size: 105px;
+  font-size: 92px;
   margin-bottom: 0px;
   font-weight: 300;
 }
 
 .units {
   position: relative;
-  top: -60px;
+  top: -50px;
   font-size: 18px;
   font-weight: 300;
 }
 
 .humidity,
 .wind-speed {
-  margin-top: 45px;
+  margin-top: 35px;
   font-size: 28px;
   font-weight: 200;
 }
@@ -176,7 +184,7 @@ p {
 }
 
 .todays-forecast {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .weekly-forecast {
@@ -193,7 +201,7 @@ p {
   font-size: 18px;
 }
 
-.fa-solid {
+.forecast-icons {
   font-size: 30px;
 }
 

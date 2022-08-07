@@ -56,6 +56,9 @@ function showSearchCityData(response) {
   let cityConditions = document.querySelector("#conditions");
   cityConditions.innerHTML = `${conditions.toLowerCase()}`;
 
+  let todaysIcon = document.querySelector("#todays-icon");
+  todaysIcon.innerHTML = `${chooseTodaysIcon(conditions)}`;
+
   getForecast(response.data.coord);
 }
 
@@ -97,6 +100,9 @@ function showCurrentCityData(response) {
   let conditions = response.data.weather[0].main;
   let cityConditions = document.querySelector("#conditions");
   cityConditions.innerHTML = `${conditions.toLowerCase()}`;
+
+  let todaysIcon = document.querySelector("#todays-icon");
+  todaysIcon.innerHTML = `${chooseTodaysIcon(conditions)}`;
 
   getForecast(response.data.coord);
 }
@@ -164,18 +170,36 @@ function getForecast(coordinates) {
 
 function chooseForecastIcon(conditions) {
   if (conditions === `Clouds`) {
-    return `<i class="fa-solid fa-cloud icon"></i>`;
+    return `<i class="fa-solid fa-cloud icon forecast-icons"></i>`;
   } else if (conditions === `Thunderstorm`) {
-    return `<i class="fa-solid fa-cloud-bolt"></i>`;
+    return `<i class="fa-solid fa-cloud-bolt forecast-icons"></i>`;
   } else if (conditions === `Drizzle`) {
-    return `<i class="fa-solid fa-cloud-rain"></i>`;
+    return `<i class="fa-solid fa-cloud-rain forecast-icons"></i>`;
   } else if (conditions === `Rain`) {
-    return `<i class="fa-solid fa-cloud-showers-heavy"></i>`;
+    return `<i class="fa-solid fa-cloud-showers-heavy forecast-icons"></i>`;
   } else if (conditions === `Snow`) {
-    return `<i class="fa-solid fa-snowflake"></i>`;
+    return `<i class="fa-solid fa-snowflake forecast-icons"></i>`;
   } else if (conditions === `Clear`) {
-    return `<i class="fa-solid fa-sun"></i>`;
+    return `<i class="fa-solid fa-sun forecast-icons"></i>`;
   } else if (conditions === "13d") {
-    return `<i class="fa-solid fa-smog"></i>`;
+    return `<i class="fa-solid fa-smog forecast-icons"></i>`;
+  }
+}
+
+function chooseTodaysIcon(conditions) {
+  if (conditions === `Clouds`) {
+    return `<i class="fa-solid fa-cloud icon todays-icon"></i>`;
+  } else if (conditions === `Thunderstorm`) {
+    return `<i class="fa-solid fa-cloud-bolt todays-icon"></i>`;
+  } else if (conditions === `Drizzle`) {
+    return `<i class="fa-solid fa-cloud-rain todays-icon"></i>`;
+  } else if (conditions === `Rain`) {
+    return `<i class="fa-solid fa-cloud-showers-heavy todays-icon"></i>`;
+  } else if (conditions === `Snow`) {
+    return `<i class="fa-solid fa-snowflake todays-icon"></i>`;
+  } else if (conditions === `Clear`) {
+    return `<i class="fa-solid fa-sun todays-icon"></i>`;
+  } else if (conditions === "13d") {
+    return `<i class="fa-solid fa-smog todays-icon"></i>`;
   }
 }
